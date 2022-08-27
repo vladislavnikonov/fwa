@@ -8,7 +8,8 @@ create table if not exists users (
 
 create table if not exists authentications (
    id serial primary key,
-   date timestamp not null,
+   date date not null,
+   time time not null,
    ip varchar(64) not null,
-   user_id integer references users (id)
+   user_id integer references users (id) on delete cascade
 );
